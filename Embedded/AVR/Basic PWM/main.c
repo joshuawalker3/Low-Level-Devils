@@ -17,7 +17,7 @@ ISR(TIMER1_COMPA_vect) {
 }
 
 ISR(TIMER1_OVF_vect) {
-    PORTB |= BITMASK(PB5); //turn led off (bit 5)
+    PORTB |= BITMASK(PB5); //turn led on (bit 5)
 }
 
 int main(void) {
