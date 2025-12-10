@@ -74,8 +74,6 @@ It is highly recommended the README should contain the following items:
 
 - Provide platform-specific steps (e.g., CMake, Make, PlatformIO, CubeIDE).
 
-- This is not required as users should know how to compile and flash code to their equipment already
-
 ### How to Contribute
 
 Because the main branch is protected, no collaborator can push directly to main.
@@ -132,7 +130,7 @@ GitHub will prompt you to create a PR from your branch.
 
 Submit the PR.
 
-If there are merge conflicts, fix them. If you don't know what that means, rech out to me on discord.
+If there are merge conflicts, fix them. If you don't know what that means, reach out to me on discord.
 
 The PR queue will be checked frequently but if your request has no comments and hasn't been merged with 3 working days, reach out.
 
