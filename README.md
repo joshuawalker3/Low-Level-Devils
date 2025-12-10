@@ -116,8 +116,14 @@ git commit -m "add led blinking task"
 
 4. **Push the Branch to GitHub**
 ```bash
-git push -u origin feature/project-name
+git push --set-upstream origin feature/project-name
 ```
+
+- Note only the command is required after the first push
+```bash
+git push
+```
+
 
 5. **Create a Pull Request (PR)**
 
