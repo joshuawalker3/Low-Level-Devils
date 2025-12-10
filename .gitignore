@@ -91,7 +91,6 @@ Release/
 # CMake/Make artifacts
 CMakeFiles/
 CMakeCache.txt
-Makefile
 cmake_install.cmake
 
 # VSCode
