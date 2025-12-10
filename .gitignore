@@ -1,0 +1,131 @@
+# General
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Build Artifacts
+build/
+build-*/
+dist/
+out/
+obj/
+*.o
+*.a
+*.so
+*.dll
+*.exe
+*.elf
+*.bin
+*.map
+*.hex
+*.lst
+*.ld
+
+# C/C++
+*.dSYM/
+*.gcda
+*.gcno
+*.gcov
+
+# Rust
+/target/
+Cargo.lock
+**/*.rs.bk
+
+# Arduino
+*.cpp.o
+*.ino.cpp
+*.elf
+*.eep
+*.lss
+*.sym
+*.hex
+*.bak
+*.d
+
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# AVR (avr-gcc)
+*.elf
+*.eep
+*.lss
+*.sym
+*.map
+*.hex
+*.o
+*.srec
+
+# ESP32 (ESP-IDF)
+build/
+esp-idf/
+CMakeFiles/
+CMakeCache.txt
+sdkconfig
+sdkconfig.old
+cmake_install.cmake
+idf.py
+
+# ESP32 (Arduino)
+*.bin
+*.elf
+**/ArduinoOutput/
+
+# STM32 (CubeIDE, HAL, LL)
+# STM32CubeIDE generated files
+.settings/
+Debug/
+Release/
+*.launch
+*.ioc
+# CubeMX backups
+*.bak
+*backup*/
+# CMake/Make artifacts
+CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# JetBrains CLion
+.idea/
+cmake-build-*/
+
+# Visual Studio
+.vs/
+*.vcxproj*
+*.sln
+
+# Python (support scripts)
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Logs and Dumps
+*.dmp
+*.stackdump
+
+# Misc Tools
+*.iml
+*.class
+
+# Firmware Artifacts
+*.uf2
+*.dfu
+
+# Ignore local environment
+.env
+.env.*
