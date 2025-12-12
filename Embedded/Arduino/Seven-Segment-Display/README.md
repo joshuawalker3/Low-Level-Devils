@@ -1,7 +1,15 @@
-# Arduino SevenSegment library
+# Arduino Seven Segment Display Driver
 
-Author: Joshua Walker
-Date: 11/26/2023
+## Project Description
+This driver allows driving of a 7 segment display directly from an Arduino Uno.
+### Fun Fact
+This was my first ever embedded project when I started learning this back in 2023. I will be publishing an update soon.
 
-This library enables use of a seven segment display (5161AS). 
-Some letters cannot be displayed due to limitations of the display.
+## Required Components
+- Common Cathode 7 Segment Display
+
+## Required Tools
+- Arduino IDE
+
+## Build
+Build and flash in accordance with Arduino IDE instructions.
