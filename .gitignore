@@ -24,7 +24,6 @@ obj/
 *.map
 *.hex
 *.lst
-*.ld
 
 # C/C++
 *.dSYM/
