@@ -32,9 +32,10 @@ obj/
 *.gcov
 
 # Rust
-/target/
+target/
 Cargo.lock
 **/*.rs.bk
+/target/flycheck*
 
 # Arduino
 *.cpp.o
