@@ -14,11 +14,13 @@ const BLUE_LED_OUTPUT_INDEX: usize = 2;
 const RED_BUTT_INPUT_INDEX: u8 = 0;
 const GREEN_BUTT_INPUT_INDEX: u8 = 1;
 const BLUE_BUTT_INPUT_INDEX: u8 = 2;
+const DEBOUNCE_TIME_MS: u128 = 50;
 
 #[tokio::main]
 async fn main() -> Result<()> {
     let chip = Chip::new("/dev/gpiochip0").await?;
 
+    //set parameters for the buttons
     let input_options = Options::input(&[RED_BUTTON_LINE, GREEN_BUTTON_LINE, BLUE_BUTTON_LINE])
         .bias(tokio_gpiod::Bias::PullUp)
         .edge(tokio_gpiod::EdgeDetect::Falling)
@@ -26,6 +28,7 @@ async fn main() -> Result<()> {
 
     let inputs = chip.request_lines(input_options).await?;
 
+    //set parameters for the LEDs
     let output_options = Options::output(&[RED_OUTPUT_LINE, GREEN_OUTPUT_LINE, BLUE_OUTPUT_LINE])
         .values([false; 3])
         .consumer("RGB Outputs");
@@ -47,11 +50,14 @@ async fn button_task(
     mut buttons: tokio_gpiod::Lines<Input>,
     leds: tokio_gpiod::Lines<Output>,
 ) -> Result<()> {
+    let mut last_edge = [Duration::ZERO; 3]; //aray that holds time stamps of most recent accepted event
+
     loop {
         let event = loop {
             match buttons.read_event().await {
                 Result::Ok(ev) => break ev,
                 Result::Err(e) => {
+                    //catches EAGAIN error
                     if e.kind() == std::io::ErrorKind::WouldBlock {
                         continue;
                     } else {
@@ -61,7 +67,11 @@ async fn button_task(
             };
         };
 
-        println!("Made it here! event = {:?}", event);
+        if event.time.as_millis() - last_edge[event.line as usize].as_millis() < DEBOUNCE_TIME_MS {
+            continue;
+        }
+
+        last_edge[event.line as usize] = event.time;
 
         let mut led_status = leds.get_values([false; 3]).await?;
 
