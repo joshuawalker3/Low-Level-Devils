@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "aht10-driver",
+    "test",
+]
+resolver = "2"
