@@ -1,0 +1,11 @@
+[package]
+name = "remote-led"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+axum = "0.7"
+tokio = { version = "*", features = ["full"] }
+tokio-gpiod = "0.3"
+anyhow = "1.0"
+futures = "0.3"
